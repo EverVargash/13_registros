@@ -11,11 +11,10 @@ struct EMP{
 
 int main(){
     EMP empleados[100];
-    int sum[100];
-    int n, mayor;
-    float ventas;
-    cout<<"Ingrese numero de empleados: ";
-    cin>>n;
+    int n, mayor, indicemayor=0; 
+    int suma[100] = {0};
+
+    cout<<"Ingrese numero de empleados: "; cin>>n;
     for(int i=0;i<n;i++){
         cout<<"Numero del empleado: "; cin>>empleados[i].num;
         cin.ignore();
@@ -26,18 +25,21 @@ int main(){
         }
         cout<<"Salario: "; cin>>empleados[i].sal;
     }
+    
     for(int k=0;k<n;k++){
-        for(int j=0;j<12;j++){
-        cin>>empleados[k].ven[j];
-        sum[k]+=empleados[k].ven[j];
+        for(int l=0;l<12;l++){
+            suma[k]+=empleados[k].ven[l];
         }
-        mayor=
-    }
-    
-    
-    for(int k=0;k<n;k++){
-
     }
 
+    mayor=suma[0];
+    for(int m=1;m<n;m++){
+        if (mayor<suma[m]){
+            mayor=suma[m];
+            indicemayor=m;
+        }
+    }
+
+    cout<<"El empleado numero "<<empleados[indicemayor].num<<" "<<empleados[indicemayor].nom<<" tiene la mayor cantidad de ventas con: "<<mayor;
     return 0;
 }
