@@ -34,7 +34,7 @@ int main(){
             empleados[k].sal = (empleados[k].sal)*1.1;
         }
         if (empleados[k].ven[11]<30){
-            cout<<"El empleado "<<empleados[k].nom<<" obtuvo solo "<<empleados[k].ven[12]<<"ventas en el mes de diciembre"<<endl;
+            cout<<"El empleado "<<empleados[k].nom<<" obtuvo solo "<<empleados[k].ven[11]<<"ventas en el mes de diciembre"<<endl;
         }
     }
 
