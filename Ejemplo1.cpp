@@ -30,6 +30,12 @@ int main(){
         for(int l=0;l<12;l++){
             suma[k]+=empleados[k].ven[l];
         }
+        if (suma[k]>100){
+            empleados[k].sal = (empleados[k].sal)*1.1;
+        }
+        if (empleados[k].ven[11]<30){
+            cout<<"El empleado "<<empleados[k].nom<<" obtuvo solo "<<empleados[k].ven[12]<<"ventas en el mes de diciembre"<<endl;
+        }
     }
 
     mayor=suma[0];
@@ -40,6 +46,6 @@ int main(){
         }
     }
 
-    cout<<"El empleado numero "<<empleados[indicemayor].num<<" "<<empleados[indicemayor].nom<<" tiene la mayor cantidad de ventas con: "<<mayor;
-    return 0;
+    cout<<"El empleado numero "<<empleados[indicemayor].num<<" "<<empleados[indicemayor].nom<<" tiene la mayor cantidad de ventas con: "<<mayor<<endl;
+    cout<<"Su sueldo sera de: "<<empleados[indicemayor].sal<<endl;
 }
