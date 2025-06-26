@@ -18,7 +18,7 @@ void leerContacto(contactoEmail &, string, char, int, correo);
 void imprimeContacto(contactoEmail &);
 
 int main(){
-    int n, op, modcontact;
+    int n, op, modcontact, selec;
     string nom, user, domain;
     char sex;
     int edad;
@@ -76,21 +76,31 @@ int main(){
                 cout<<"3. Edad"<<endl;
                 cout<<"4. Usuario"<<endl;
                 cout<<"5. Dominio"<<endl;
-                switch (){
+                cout<<"seleccione una opcion: "; cin>>selec;
+                switch (selec){
                     case 1:
-                        string nom;
                         cin.ignore();
-                        cout<<"Nuevo nombre: "; getline(cin, nom)
-                        lista[modcontact-1];
-
+                        cout<<"Nuevo nombre: "; getline(cin, nom);
+                        lista[modcontact-1].nom;
                         break;
                     case 2:
+                        cout<<"Sexo: "<<endl;
+                        cin>>lista[modcontact-1].sex;
                         break;
                     case 3:
+                        cout<<"Edad: "<<endl;
+                        cin>>lista[modcontact-1].edad;
                         break;
                     case 4:
+                        cout<<"Nuevo usuario: "<<endl;
+                        cin>>lista[modcontact-1].email.user;
                         break;
                     case 5:
+                        cout<<"Nuevo dominio: "<<endl;
+                        cin>>lista[modcontact-1].email.domain;
+                        break;
+                    default:
+                        cout<<"Ingrese una opcion valida"<<endl;
                         break;
                 }
                 break;
