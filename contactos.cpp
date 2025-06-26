@@ -31,6 +31,7 @@ int main(){
         cout<<"1. Agregar contacto"<<endl;
         cout<<"2. Mostrar contactos"<<endl;
         cout<<"3. Modificar contacto"<<endl;
+        cout<<"4. Eliminar contacto"<<endl;
         cout<<"0. Salir"<<endl;
         cout<<"Elige una opcion: "; cin>>op;
         switch(op){
@@ -68,7 +69,7 @@ int main(){
                     imprimeContacto(lista[i]);
                     cout<<endl;
                 }
-                cin>>modcontact;
+                cout<<"Elejir(#): "; cin>>modcontact;
                 imprimeContacto(lista[modcontact-1]);
                 cout<<"_____MODIFICAR______"<<endl;
                 cout<<"1. Nombre"<<endl;
@@ -103,6 +104,21 @@ int main(){
                         cout<<"Ingrese una opcion valida"<<endl;
                         break;
                 }
+                break;
+            case 4:   
+                cout << "Ingrese el número del contacto a eliminar: ";
+                cin >> modcontact;
+                if(modcontact > 0 && modcontact <= n){
+                    for(int i = modcontact - 1; i < n - 1; i++){
+                        lista[i] = lista[i + 1];
+                }
+                n--; 
+                cout << "Contacto eliminado correctamente.\n";
+                }
+                else cout << "Número inválido.\n";
+                system("pause");
+    break;
+
                 break;
             case 0:
                 cout<<"Esta seguro de salir? (S/N): ";
