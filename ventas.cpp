@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -17,11 +18,12 @@ struct producto{
 
 string menu(){
     string op;
+    system("cls");
     cout<<"**************************************"<<endl;
     cout<<"        GESTIONAR_PRODUCTOS"<<endl;
     cout<<"**************************************"<<endl;
     cout<<"A) Registrar un nuevo producto."<<endl;
-    cout<<"B) Listar los productos regsitrados."<<endl;
+    cout<<"B) Listar los productos registrados."<<endl;
     cout<<"C) Buscar un producto por nombre."<<endl;
     cout<<"D) Actualizar los datos de un producto."<<endl;
     cout<<"E) Eliminar un producto."<<endl;
@@ -40,7 +42,6 @@ int main(){
     do {
         OP=menu();
         if(OP == "a" || OP == "A"){
-            system("cls");
             cout<<"\n******************************************"<<endl;
             cout<<"        REGISTRAR_UN_PRODUCTO"<<endl;
             cout<<"******************************************"<<endl;
@@ -60,6 +61,25 @@ int main(){
                 system("pause");
             }
         }
+        else if (OP == "b" || OP =="B"){
+            cout << left;
+            cout <<"|"<< setw(5) << "  Num"
+            <<"|"<< setw(20) <<"  Nombre"
+            <<"|"<< setw(10) <<"  Precio"
+            <<"|"<< setw(10) <<"  ID"
+            <<"|"<< setw(10) <<"  Cantidad  |"<<endl;
+
+            for(int i=0 ; i<cant ; i++){
+                cout<<left;
+                cout <<"|"<< setw(5) <<i+1
+                <<"|"<< setw(20) <<PRODUCTOS[i].nombre
+                <<"|"<< setw(10) <<PRODUCTOS[i].precio
+                <<"|"<< setw(10) <<PRODUCTOS[i].caract.idventa
+                <<"|"<< setw(10) <<PRODUCTOS[i].caract.cantidad<<"  |"<<endl;
+            }
+            system("pause");
+        }
+
     } while(OP != "0");
     return 0;
 }
